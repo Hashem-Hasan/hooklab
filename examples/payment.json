@@ -1,0 +1,5 @@
+{
+  "id": "payment-demo-001",
+  "type": "payment.paid",
+  "data": { "paymentId": "order-demo-001", "amount": 1850, "version": 1 }
+}

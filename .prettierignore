@@ -1,0 +1,8 @@
+node_modules
+dist
+lib
+reports
+.data
+package-lock.json
+*.svg
+public/example-report

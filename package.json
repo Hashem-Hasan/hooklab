@@ -1,0 +1,61 @@
+{
+  "name": "@hashem-hasan/hooklab",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Break your webhook integration here. Understand how it recovers.",
+  "license": "MIT",
+  "author": "Hashem Hasan",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hashem-Hasan/hooklab.git"
+  },
+  "engines": {
+    "node": ">=24.14.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "npm run build:lib && tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "start": "node lib/bin/hooklab.js start",
+    "cli": "node lib/bin/hooklab.js",
+    "test:ui": "node --import tsx --test tests/ui.browser.ts",
+    "build:lib": "tsc -p tsconfig.lib.json",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "lucide-react": "^0.577.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "typescript": "7.0.2",
+    "vite": "8.3.4",
+    "tsx": "4.23.15",
+    "playwright": "1.64.1",
+    "prettier": "3.9.10"
+  },
+  "bin": {
+    "hooklab": "bin/hooklab.mjs"
+  },
+  "exports": {
+    ".": {
+      "types": "./lib/src/server.d.ts",
+      "import": "./lib/src/server.js"
+    }
+  },
+  "files": [
+    "lib",
+    "bin/hooklab.mjs",
+    "dist",
+    "README.md",
+    "LICENSE"
+  ]
+}
